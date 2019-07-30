@@ -1,0 +1,54 @@
+{
+  "_from": "cordova-plugin-flurryanalytics",
+  "_id": "cordova-plugin-flurryanalytics@1.4.6",
+  "_inBundle": false,
+  "_integrity": "sha512-FdWg+uYNIXEO50OPNzRcdf49X/QbWYjt2UA2A9mRObDthh6YqGxA1mPTcjlGaPHxJgkDdEQzwEwYaNZDWi6oIg==",
+  "_location": "/cordova-plugin-flurryanalytics",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-flurryanalytics",
+    "name": "cordova-plugin-flurryanalytics",
+    "escapedName": "cordova-plugin-flurryanalytics",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-flurryanalytics/-/cordova-plugin-flurryanalytics-1.4.6.tgz",
+  "_shasum": "26cfc9e52be7f1c0a8ac558863ca557d4b2c7ac2",
+  "_spec": "cordova-plugin-flurryanalytics",
+  "_where": "C:\\cordova\\project\\synrun",
+  "author": {
+    "name": "Carlos \"blakgeek\" Lawton"
+  },
+  "bugs": {
+    "url": "https://github.com/blakgeek/cordova-plugin-flurryanalytics/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Ads support for Flurry Analytics to Cordova and Phonegap apps",
+  "devDependencies": {
+    "libxmljs": "^0.18.4"
+  },
+  "homepage": "https://github.com/blakgeek/cordova-plugin-flurryanalytics",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-flurryanalytics",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakgeek/cordova-plugin-flurryanalytics.git"
+  },
+  "scripts": {
+    "postversion": "node scripts/bump-plugin-xml.js; git add plugin.xml; git commit plugin.xml -m \"${npm_package_version}\""
+  },
+  "version": "1.4.6"
+}

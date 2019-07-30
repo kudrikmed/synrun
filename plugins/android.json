@@ -1,0 +1,69 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-apprate": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-inapppurchase": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-insomnia": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-health": {
+      "GMS_VERSION": "16.0.1",
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-flurryanalytics": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-cocoapod-support": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "cordova-plugin-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geolocation@4.0.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-x-socialsharing": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-socialsharing"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
+    }
+  },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin@^4.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-apprate": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-apprate"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-dialogs": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-dialogs"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-globalization": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-globalization"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-nativestorage": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-nativestorage"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-insomnia": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-inapppurchase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inapppurchase"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-health": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-health"
+    },
+    "is_top_level": true,
+    "variables": {
+      "HEALTH_READ_PERMISSION": "App needs read access",
+      "HEALTH_WRITE_PERMISSION": "App needs write access"
+    }
+  },
+  "cordova-plugin-vibration": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-vibration"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-local-notification": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-local-notification"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-badge": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-badge@>=0.8.5"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-flurryanalytics": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-flurryanalytics"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-cocoapod-support": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-cocoapod-support"
+    },
+    "is_top_level": false,
+    "variables": {}
+  }
+}

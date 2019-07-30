@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-flurryanalytics" version="1.4.6">
+    <name>Flurry Analytics</name>
+    <description>Adds support for Flurry Analytics to your Cordova/PhoneGap apps.</description>
+    <license>Apache 2.0</license>
+    <keywords>flurry,analytics,cordova</keywords>
+    <author>Carlos "blakgeek" Lawton</author>
+    <repo>https://github.com/blakgeek/cordova-plugin-flurryanalytics.git</repo>
+    <issue>https://github.com/blakgeek/cordova-plugin-flurryanalytics/issues</issue>
+
+    <js-module src="www/FlurryAnalyticsPlugin.js" name="FlurryAnalyticsPlugin">
+        <clobbers target="FlurryAnalytics"/>
+        <clobbers target="plugins.FlurryAnalytics"/>
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version="&gt;=3.0.0"/>
+    </engines>
+
+    <dependency id="cordova-plugin-cocoapod-support"/>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FlurryAnalyticsPlugin">
+                <param name="ios-package" value="FlurryAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+        <!--<header-file src="src/ios/Flurry.h" />-->
+        <header-file src="src/ios/FlurryAnalyticsPlugin.h"/>
+        <source-file src="src/ios/FlurryAnalyticsPlugin.m"/>
+        <pod id="Flurry-iOS-SDK/FlurrySDK"/>
+    </platform>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FlurryAnalyticsPlugin">
+                <param name="android-package" value="com.blakgeek.cordova.plugin.flurry.FlurryAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </config-file>
+
+        <source-file src="src/android/com/blakgeek/cordova/plugin/flurry/FlurryAnalyticsPlugin.java" target-dir="src/com/blakgeek/cordova/plugin/flurry/"/>
+
+        <framework src="com.flurry.android:analytics:6+"/>
+        <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
+    </platform>
+</plugin>

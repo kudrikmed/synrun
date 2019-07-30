@@ -1,0 +1,1111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>My App</title>
+
+    <link rel="stylesheet" href="css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+    (function (c, a) {
+            if (!a.__SV) {
+                var b = window; try { var d, m, j, k = b.location, f = k.hash; d = function (a, b) { return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null }; f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search))) } catch (n) { } var l, h; window.mixpanel = a; a._i = []; a.init = function (b, d, g) {
+                    function c(b, i) {
+                        var a = i.split("."); 2 == a.length && (b = b[a[0]], i = a[1]); b[i] = function () {
+                            b.push([i].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    } var e = a; "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel"; e.people = e.people || []; e.toString = function (b) { var a = "mixpanel"; "mixpanel" !== g && (a += "." + g); b || (a += " (stub)"); return a }; e.people.toString = function () { return e.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+                    for (h = 0; h < l.length; h++)c(e, l[h]); var f = "set set_once union unset remove delete".split(" "); e.get_group = function () { function a(c) { b[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); e.push([d, call2]) } } for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++)a(f[c]); return b }; a._i.push([b, d, g])
+                }; a.__SV = 1.2; b = c.createElement("script"); b.type = "text/javascript"; b.async = !0; b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                    MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"; d = c.getElementsByTagName("script")[0]; d.parentNode.insertBefore(b, d)
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("5defe28acbb3ef3a1a770fd60bd51477");</script>
+    <!-- end Mixpanel -->
+
+</head>
+<body>
+
+
+    <div id="app">
+        <!-- Status bar overlay for fullscreen mode-->
+        <div class="statusbar"></div>
+        <!-- Left panel with cover effect-->
+        <div class="panel panel-left panel-cover theme-dark">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">Left Panel</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block">Left panel content goes here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right panel with reveal effect-->
+        <div class="panel panel-right panel-reveal">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title" id="textSettings">Settings</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block">
+                            <a href="#" id="changeprogramm" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeTheProgramm">Change the programm</div>
+                                </div>
+                            </a>
+                            <br>
+                            <a href="#" id="changelanguage" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeLanguage">Language and metrics</div>
+                                </div>
+                            </a>
+                            <br>
+                            <a href="#" id="logoutmenu" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textLogOut">Logout</div>
+                                </div>
+                            </a>
+                            <br>
+                        
+							<a href="#" id="googlefitmenu" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textAddPulsemenu">Add pulse data</div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Views/Tabs container -->
+        <div class="views tabs safe-areas">
+            <!-- Tabbar for switching views-tabs -->
+            <div class="toolbar tabbar-labels toolbar-bottom">
+                <div class="toolbar-inner">
+                    <a href="#view-news" class="tab-link tab-link-active">
+                        <i class="icon f7-icons ios-only">info_round</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">info_round</i>
+                        <i class="icon material-icons md-only">info</i>
+                        <span class="tabbar-label" id="textTabInfo">Info</span>
+                    </a>
+                    <a href="#view-progress" class="tab-link">
+                        <i class="icon f7-icons ios-only">graph_round</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">graph_round</i>
+                        <i class="icon material-icons md-only">trending_up</i>
+                        <span class="tabbar-label" id="textTabProgress">Progress</span>
+                    </a>
+                    <a href="#view-runtracker" id="tabruntracker" class="tab-link">
+                        <i class="icon f7-icons ios-only">flag</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">flag</i>
+                        <i class="icon material-icons md-only">flag</i>
+                        <span class="tabbar-label" id="textTabTracker">Tracker</span>
+                    </a>
+                    <a href="#view-programms" class="tab-link">
+                        <i class="icon f7-icons ios-only">calendar</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">calendar</i>
+                        <i class="icon material-icons md-only">date_range</i>
+                        <span class="tabbar-label" id="textTabProgramms">Programms</span>
+                    </a>
+                    <a href="#view-profile" class="tab-link">
+                        <i class="icon f7-icons ios-only">person</i>
+                        <i class="icon f7-icons ios-only icon-ios-fill">person</i>
+                        <i class="icon material-icons md-only">person</i>
+                        <span class="tabbar-label" id="textTabProfile">Profile</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+            <!-- Programms View -->
+            <div id="view-programms" class="view tab">
+
+                <div class="page" data-name="programmspage">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                         
+                            <div class="title" id="programmtitle">SynRun</div>
+                        </div>
+                    </div>
+                    <div id="programmview" class="page-content">
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Progress View -->
+            <div id="view-progress" class="view tab">
+                <div class="page" data-name="runtracker">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+
+                            <div class="title" id="progresstitle">SynRun</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+
+                        <div class="card">
+                            <div class="card-header" id="textCurrentLevel"></div>
+                            <div class="card-content">
+                                <div class="list media-list">
+                                    <ul>
+                                        <li class="item-content">
+                                            <div class="item-media">
+
+                                                <i class="icon f7-icons text-color-primary text-size-44">person</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textCurrentLevelDots"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="currentlevelvalue"></div>
+                                              
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="progressbar" data-progress="20" id="levelprogressbar"><span></span></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="link" id="textShareLevel">Share</a>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="textTotal"></div>
+                            <div class="card-content">
+                               
+                                   
+                                <div class="list media-list">
+                                    <ul>
+
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons text-color-primary text-size-44">placemark</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textTotalDistance"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="totaldistancevalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons text-color-primary text-size-44">stopwatch</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textTotalAmountOfTrainings"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="trainingsvalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons text-color-primary text-size-44">fire</i>
+                               
+                                     
+
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textCaloriesBurned"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="caloriesburnedvalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                            <i class="icon f7-icons text-color-primary text-size-44">thumbs_up</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textFatBurned"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="fatburnedvalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                  
+
+                            </div>
+                   
+                        </div>
+
+                        <div class="block-title" id="textMyAchievements">My achievements</div>
+                        <div id="achievements">
+
+                            <div class="list media-list">
+                                <ul>
+                                    <li id="firstachievement">
+                                        <a href="#" class="item-link item-content">
+                                            <div class="item-media"><i class="icon f7-icons text-color-primary text-size-80">star</i></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="firstachievementname">Beginning</div>
+                                                    <div class="item-after" id="firstachievementshare">Share</div>
+                                                </div>
+                                                <div class="item-subtitle" id="firstachievementshortdescription">First run</div>
+                                                <div class="item-text" id="firstachievementdescription">Nobody believed in me, but I did it</div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li id="secondachievement">
+                                        <a href="#" class="item-link item-content">
+                                            <div class="item-media"><img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" /></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="secondachievementname">Beginning</div>
+                                                    <div class="item-after" id="secondachievementshare">Share</div>
+                                                </div>
+                                                <div class="item-subtitle">Beatles</div>
+                                                <div class="item-text" id="secondachievementdescription">Nobody believed in me, but I did it</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+            <!-- Tracker View -->
+            <div id="view-runtracker" class="view tab">
+                <div class="page" data-name="runtracker">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+
+                            <div class="title" id="trackertitle">SynRun</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+
+                        <div id="map">
+                        </div>
+
+                        <div id="fabstart" class="fab fab-extended fab-center-bottom">
+                            <a href="#">
+
+                                <div class="fab-text" id="textTrackerFABStart">Start</div>
+                            </a>
+                        </div>
+                        <div id="fabgps" class="fab fab-right-top">
+                            <a href="#">
+                                <i class="icon f7-icons">navigation</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News View -->
+            <div id="view-news" class="view view-main tab tab-active">
+
+            </div>
+
+            <!-- Profile View -->
+            <div id="view-profile" class="view tab">
+                <div class="page" data-name="profile">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="right">
+                                <a href="#" class="link icon-only panel-open" data-panel="right">
+                                    <i class="icon f7-icons ios-only">menu</i>
+                                    <i class="icon material-icons md-only">menu</i>
+                                </a>
+                            </div>
+                            <div class="title" id="profileTitle">SynRun</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+<div class="card">
+                        <div class="list inset">
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="icon f7-icons text-color-primary">person</i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title" id="username">Name</div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+</div>
+                                    
+									
+									
+										
+										
+                        <div class="card">
+                            <div class="card-header" id="textParameters">Parameters</div>
+
+                            <div class="card-content">
+							
+									<div class="list media-list">
+                                    <ul>
+
+                                        <li class="item-content">
+                                            <div class="item-media text-size-44 text-color-primary" id="bmivalue" style="width: 25%">
+                                                145
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textBMI">Body mass index</div>
+                                                </div>
+                                                <div class="item-text" id="bmidescription">According to the WHO, optimal value of BMI is 18.5 - 25.</div>
+
+
+                                            </div>
+                                        </li>
+										 <li class="item-content">
+                                            <div class="item-media text-size-44 text-color-primary" id="safehrvalue" style="width: 25%">
+                                                145
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textMaxSafeHR">Max safe heart rate</div>
+                                                </div>
+                                                <div class="item-text" id="safehrdescription">This is the highest heart rate you can achieve without severe problems through exercise stress</div>
+
+
+                                            </div>
+                                        </li>
+										
+										 <li class="item-content">
+                                            <div class="item-media text-size-44 text-color-primary" id="fatpercentagevalue" style="width: 25%">
+                                                145
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textBodyFatPercentage">Body fat percentage</div>
+                                                </div>
+                                                <div class="item-text" id="fatpercentagedescription">Percentage of your weight that is made up of fat</div>
+
+
+                                            </div>
+                                        </li>
+										
+										</ul>
+										</div>
+										
+										
+                   
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		
+	
+        <!-- Popup -->
+        <div class="popup" id="my-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title" id="textPopUpRun">Run!</div>
+
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title" id="textPopUpParameters">Parameters</div>
+                        <div class="block block-strong">
+                            <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="speed">-</h4>
+                                    <p id="textFreePopUpSpeed">Speed</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="traveledDistance">-</h4>
+                                    <p id="textFreePopUpDistance">Distance</p>
+                                </div>
+
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="time">-</h4>
+                                    <p id="textFreePopUpTime">Time</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-title" id="textPopUpMetabolism">Metabolism</div>
+                        <div class="block block-strong">
+                            <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="adrenalin">-</h4>
+                                    <p id="textFreePopUpAdrenalin">Adrenalin</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="noradrenalin">-</h4>
+                                    <p id="textFreePopUpNoradrenalin">Noradrenalin</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="dopamine">-</h4>
+                                    <p id="textFreePopUpDopamine">Dopamine</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="block block-strong text-align-center">
+                            <div id="trackerPopupDisclaimer">For correct work of the app, do not put the device into sleep mode</div>
+                        </div>
+                        <div id="fabstop" class="fab fab-extended fab-center-bottom">
+                            <a href="#">
+
+                                <div class="fab-text" id="textFreePopUpFABStop">Stop</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Beginner program popup -->
+        <div class="popup" id="beginner-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+
+                            <div class="title" id="textBeginnerPopUpRun">Run!</div>
+
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title" id="textBeginnerPopUpParameters">Parameters</div>
+                        <div class="block block-strong">
+
+                            <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="beginnerSpeed">-</h4>
+                                    <p id="textBeginnerPopUpSpeed">Speed</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="beginnerTraveledDistance">-</h4>
+
+                                    <p id="textBeginnerPopUpDistance">Distance</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="beginnerTime">00:00:00</h4>
+                                    <p id="textBeginnerPopUpTime">Time</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-title" id="textBeginnerPopUpMetabolism">Metabolism</div>
+                        <div class="block block-strong">
+                            <div class="col text-align-center">
+                                <div id="beginnerGauge"
+                                     class="gauge beginnergauge"
+                                     data-type="semicircle"
+                                     data-value="0"
+                                     data-value-text="-"
+                                     data-value-text-color="#e91e63"
+                                     data-border-color="#e91e63"
+                                     data-label-text="-"
+                                     data-label-text-color="#333"></div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-50 text-align-center">
+
+                                    <h4 id="beginnerDopamine">-</h4>
+                                    <p id="textBeginnerPopUpCurrentDopamine">Current Dopamine</p>
+                                </div>
+
+                                <div class="col-50 text-align-center">
+
+                                    <h4 id="targetDopamine">-</h4>
+                                    <p id="textBeginnerPopUpTargetDopamine">Target Dopamine</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="block block-strong text-align-center">
+                            <div id="beginnerPopupDisclaimer">For correct work of the app, do not put the device into sleep mode</div>
+                        </div>
+                    </div>
+                    <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
+                        <a href="#">
+
+                            <div class="fab-text" id="textBeginnerPopUpFABStop">Stop</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Congradulations beginner popup -->
+    <div class="popup" id="beginner-congradulations-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                        <div class="title" id="textBeginnerCongradulationsTitle">Congradulations!</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="block-title" id="textBlockTitleCongrads">Viva!</div>
+                    <div class="block block-strong">
+                        <div id="textSuccessfulTraining" align="center">You have successfully completed training!</div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsPopupDistance">Distance</div>
+                            <div class="col-50 text-align-center" id="congradulationsPopupDistanceValue"></div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsPopupAverageSpeed">Average Speed</div>
+                            <div class="col-50 text-align-center" id="congradulationsPopupAverageSpeedValue"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsPopupTime">Time</div>
+                            <div class="col-50 text-align-center" id="congradulationsPopupTimeValue"></div>
+                        </div>
+                        <br>
+
+                    </div>
+                    <div class="block">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="#" class="button button-fill button-round button-large" id="textBeginnerSuccessShare">Share!</a>
+                        </div>
+                        <div class="col-50">
+                            <a href="#" class="button button-fill button-round button-large" id="textBeginnerSuccessClose">Ok</a>
+                        </div>
+                    </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Congradulations popup -->
+    <div class="popup" id="congradulations-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                        <div class="title" id="textCongradulationsTitle">Congradulations!</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="block-title" id="textBlockTitleCongradulations">Viva!</div>
+                    <div class="block block-strong">
+                        <div id="textSuccessfulFreeTraining" align="center">You have successfully completed training!</div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsDistance">Distance</div>
+                            <div class="col-50 text-align-center" id="congradulationsDistanceValue"></div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsAverageSpeed">Average Speed</div>
+                            <div class="col-50 text-align-center" id="congradulationsAverageSpeedValue"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsTime">Time</div>
+                            <div class="col-50 text-align-center" id="congradulationsTimeValue"></div>
+                        </div>
+                        <br>
+
+                    </div>
+                    <div class="block block-strong text-align-center">
+                        <span id="congradulationsUseProgramms">To get all the benefits of SynRun, try one of the workout </span><a href="#" id="congradulationsUseProgrammsHref">programms</a>
+                    </div>
+                    <div class="block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="#" class="button button-fill button-round button-large" id="textFreeSuccessShare">Share!</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="#" class="button button-fill button-round button-large" id="textFreeSuccessClose">Ok</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="my-login-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content" style="background-image: url(images/girlrunning.gif); background-size: 100%; background-repeat: no-repeat; background-position: top;">
+                    <div class="login-screen-title" id="textLoginScreenLogin">Login</div>
+                    <div class="list">
+                        <ul>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textLoginScreenUsername">Username</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="username" placeholder="Your username" id="loginNameInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textLoginScreenPassword">Password</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" name="password" placeholder="Your password" id="loginPasswordInput">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link list-button login-button" id="textLoginScreenSignInButton">Sign In</a>
+                            </li>
+                        </ul>
+                        <div class="block-footer" id="textLoginScreenHaveNoAccount">Have no account yet? Register and join our society.</div> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language and Metrics Screen -->
+    <div class="login-screen" id="language-and-metrics-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title" id="textLanguageScreenLanguage">Language and units</div>
+                    <div class="list">
+                        <ul>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textLanguage">Language</div>
+                                    <div class="item-input-wrap input-dropdown-wrap">
+                                        <select id="languageselector" placeholder="Please choose...">
+                                            <option value="en" id="textLanguageEnglish">English</option>
+                                            <option value="ru" id="textLanguageRussian">Русский</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textMetricsItems">Units</div>
+                                    <div class="item-input-wrap input-dropdown-wrap">
+                                        <select id="unitselector" placeholder="Please choose...">
+                                            <option value="metric" id="textMetric">Metric</option>
+                                            <option value="imperial" id="textImperial">Imperial</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link list-button" id="textSaveAndExitButton">Save and exit</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Registration Screen -->
+    <div class="login-screen" id="my-registration-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title" id="textRegistrationScreenRegistration">Registration</div>
+                    <div class="list">
+                        <ul>
+                            <!-- First name -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenFirstName">First name</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="firstname" placeholder="Your first name" id="registrationFirstNameInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Second name -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenSecondName">Second name</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="secondname" placeholder="Your second name" id="registrationSecondNameInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Gender -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenGender">Gender</div>
+                                    <div class="item-input-wrap input-dropdown-wrap">
+                                        <select id="genderselector" placeholder="Please choose...">
+                                            <option value="Female" id="textRegistrationScreenGenderFemale">Female</option>
+                                            <option value="Male" id="textRegistrationScreenGenderMale">Male</option>
+                                            <option value="Other" id="textRegistrationScreenGenderOther">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Birthday -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenBirthday">Birthday</div>
+                                    <div class="item-input-wrap">
+                                        <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Body mass -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenBodyMass">Body mass</div>
+                                    <div class="item-input-wrap">
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!" id="registrationBodyMassInput">
+                                            </div>
+                                            <div class="col-50">
+                                                <select id="massselector" placeholder="Please choose...">
+                                                    <option value="kg" id="textRegistrationScreenKg">kg</option>
+                                                    <option value="lbs" id="textRegistrationScreenLbs">lbs</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Height -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenHeight">Height</div>
+                                    <div class="item-input-wrap">
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!" id="registrationHeightInput">
+                                            </div>
+                                            <div class="col-50">
+                                                <select id="heightselector" placeholder="Please choose...">
+                                                    <option value="cm" id="textRegistrationScreenCm">cm</option>
+                                                    <option value="inch" id="textRegistrationScreenInch">inch</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Email -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label">E-mail</div>
+                                    <div class="item-input-wrap">
+                                        <input type="email" name="email" placeholder="Your e-mail" required validate id="registrationEmailInput">
+
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Login -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationLogin">Login</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="login" placeholder="Login" required validate id="textRegistrationLoginInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Password -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationPassword">Password</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" name="password" placeholder="Your password" required validate id="textRegistrationPasswordInput">
+
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Second time password -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationPassword2">Password</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" name="password2" placeholder="Your password one more time" required validate id="textRegistrationPasswordInput2">
+
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#" id="register-button" class="item-link list-button">Register</a>
+                            </li>
+                        </ul>
+                        <div class="block-footer">
+						<label class="checkbox">
+ 
+						<input type="checkbox" id="agreeWithPrivacyPolicy">
+						<i class="icon-checkbox"></i>
+						</label>
+					<span id="textAgreeWithPrivacy">I agree with <a class="link external" href="https://synrunning.com/pp.html">privacy policy and terms of use</a></span>
+					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <!-- Ask Google Fit popup -->
+    <div class="popup" id="googlefit-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                        <div class="title" id="textPermissionsTitle">Permissions</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+				<div class="card">
+                <div class="card-header" id="textCardHeaderNotifications">Notifications</div>
+			
+                <div class="card-content card-content-padding">
+				<div class="list">
+                <ul>
+                <li>
+				<label class="item-checkbox item-content">
+                <input type="checkbox" id="notificationsCheckbox" checked="checked"/>
+                <i class="icon icon-checkbox"></i>
+                <div class="item-inner">
+                <div class="item-title" id="textIWantReceiveNotifications">I want to receive notifications</div>
+                </div>
+                </label>
+				</li>
+				</ul>
+				</div>
+				</div>
+                <div class="card-footer"><a href="#" class="link popover-open" id="whyItIsImportantNotifications" data-popover="#popoverwhynotificationsimportant">Why it is important?</a></div>
+                </div>
+				
+				<div class="card">
+                <div class="card-header" id="textCardHeaderGoogleFit">Google Fit</div>
+                <div class="card-content card-content-padding">
+				<div class="list">
+                <ul>
+                <li>
+				<label class="item-checkbox item-content">
+                <input type="checkbox" id="googleFitCheckBox" checked="checked"/>
+                <i class="icon icon-checkbox"></i>
+                <div class="item-inner">
+                <div class="item-title" id="textIWantUseGoogleFit">I want to use Google Fit synchronization</div>
+                </div>
+                </label>
+				</li>
+				</ul>
+				</div>
+				</div>
+                <div class="card-footer"><a href="#" class="link popover-open" id="whyItIsImportantGoogleFit" data-popover="#popoverwhygooglefitimportant">Why it is important?</a></div>
+                </div>
+				
+                    <div class="block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="#" class="button button-fill button-round button-large close-button" id="textCancelGoogleFit">Cancel</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="#" class="button button-fill button-round button-large" id="textInstallGoogleFit">Install</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+	
+ <!-- Subscribtion popup -->
+    <div class="popup" id="subscription-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                        <div class="title" id="textSubscriptionTitle">Subscription</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+                
+				     <div class="card">
+                            <div class="card-header" id="textSubscription">Subscription</div>
+
+                            <div class="card-content">
+							
+									<div class="list media-list">
+                                    <ul>
+
+                                        <li>
+										 <a href="#" class="item-link item-content" id="monthSubscriptionButton">
+                                            <div class="item-media">
+                                                 <i class="icon f7-icons  text-size-44 text-color-primary">card</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="monthSubscriptionTitle">Monthly</div>
+													 <div class="item-after" id="monthSubscriptionPrice">5 $</div>
+													
+                                                </div>
+                                                <div class="item-text" id="monthSubscriptionDescription">Get subscription for 1 month</div>
+
+
+                                            </div>
+											</a>
+                                        </li>
+										
+										
+										</ul>
+										</div>
+										
+										
+                   
+                        </div>
+                        </div>
+				
+				
+                    <div class="block">
+               
+                                <a href="#" class="button button-fill button-round button-large" id="textBuySubscription">Next</a>
+                            </div>
+                     
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+  <!-- Popovers -->
+  <div class="popover" id="popoverwhynotificationsimportant">
+    <div class="popover-inner">
+      <div class="block">
+        <p id="textNotificationsPopoverTitle">Why notifications are important?</p>
+        <p id="textWhyNotificationsImportant">Notifications will remind you to run, even if you don’t want to.</p>
+      </div>
+    </div>
+  </div>
+  
+   <div class="popover" id="popoverwhygooglefitimportant">
+    <div class="popover-inner">
+      <div class="block">
+        <p id="textGoogleFitPopoverTitle">Why Google Fit Sync is important?</p>
+        <p id="textWhyGoogleFitIsImportant">If you use a wearable device to determine the pulse, please allow access to this data. This will improve the accuracy of work. To obtain data on the pulse requires the installation of Google Fit.</p>
+      </div>
+    </div>
+  </div>
+    <!-- Cordova -->
+
+    <script src="cordova.js"></script>
+
+    <script src="scripts/leaflet.js"></script>
+
+    <!-- Framework7 library -->
+    <script src="scripts/framework7.bundle.min.js"></script>
+    <!-- App routes -->
+    <script src="js/routes.js"></script>
+    <script src="scripts/podo.js"></script>
+
+    <script src="js/neuronetwork2.js"></script>
+    <!-- Your custom app scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/languages.js"></script>
+</body>
+
+
+
+
+</html>
