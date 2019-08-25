@@ -67,6 +67,18 @@
             {
               "xml": "<feature name=\"FlurryAnalyticsPlugin\"><param name=\"android-package\" value=\"com.blakgeek.cordova.plugin.flurry.FlurryAnalyticsPlugin\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"BackgroundModeExt\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundModeExt\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
+              "count": 1
             }
           ]
         }
@@ -110,6 +122,14 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+              "count": 2
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.FOREGROUND_SERVICE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS\" />",
               "count": 1
             }
           ],
@@ -138,6 +158,10 @@
             },
             {
               "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.localnotification.ClickReceiver\" android:theme=\"@android:style/Theme.Translucent\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
               "count": 1
             }
           ]
@@ -210,6 +234,9 @@
       "PACKAGE_NAME": "com.synfitness.synrun"
     },
     "cordova-plugin-flurryanalytics": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-background-mode": {
       "PACKAGE_NAME": "com.synfitness.synrun"
     }
   },
@@ -396,6 +423,15 @@
         "FlurryAnalytics",
         "plugins.FlurryAnalytics"
       ]
+    },
+    {
+      "id": "cordova-plugin-background-mode.BackgroundMode",
+      "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+      "pluginId": "cordova-plugin-background-mode",
+      "clobbers": [
+        "cordova.plugins.backgroundMode",
+        "plugin.backgroundMode"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -416,6 +452,7 @@
     "cordova-plugin-badge": "0.8.8",
     "cordova-plugin-local-notification": "0.9.0-beta.2",
     "cordova-plugin-cocoapod-support": "1.6.2",
-    "cordova-plugin-flurryanalytics": "1.4.6"
+    "cordova-plugin-flurryanalytics": "1.4.6",
+    "cordova-plugin-background-mode": "0.7.2"
   }
 }

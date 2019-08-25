@@ -89,6 +89,12 @@
                                 </div>
                             </a>
                             <br>
+							 <a href="#" id="batterysettings" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeBattery">Battery settings</div>
+                                </div>
+                            </a>
+                            <br>
                             <a href="#" id="logoutmenu" class="item-content item-link">
                                 <div class="item-inner">
                                     <div class="item-title" id="textLogOut">Logout</div>
@@ -210,6 +216,16 @@
 
                             </div>
                         </div>
+						
+						<div class="card">
+						<div class="card-content">
+						<div class="list links-list">
+						<ul>
+							<li><a href="#" id="trainingHistory">Training history</a></li>
+							</ul>
+							</div>
+							</div>
+							</div>
 
                         <div class="card">
                             <div class="card-header" id="textTotal"></div>
@@ -727,6 +743,62 @@
                         </div>
                     </div>
                 </div>
+        </div>
+    </div>
+	
+	<!-- History popup -->
+    <div class="popup" id="history-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"id="historyPopupBackButton">
+						<i class="icon icon-back"></i>
+						</div>
+                        <div class="title" id="textHistoryTitle">History</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+               
+			   <div id="historyTestDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- History details popup -->
+    <div class="popup" id="history-details-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"id="historyDetailsPopupBackButton">
+						<i class="icon icon-back"></i>
+						</div>
+                        <div class="title" id="textHistoryDetailsTitle">Details</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+               
+			     <div class="block block-strong">
+
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="historyDetailsDistance">Distance</div>
+                            <div class="col-50 text-align-center" id="historyDetailsDistanceValue"></div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="historyDetailsTime">Time</div>
+                            <div class="col-50 text-align-center" id="historyDetailsTimeValue"></div>
+                        </div>
+                        <br>
+
+                    </div>
+            </div>
         </div>
     </div>
 

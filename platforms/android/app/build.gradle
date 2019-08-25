@@ -273,6 +273,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-fitness:16.0.1"
     implementation "com.android.support:support-v4:26.+"
     implementation "com.flurry.android:analytics:6+"
+    implementation "com.android.support:support-compat:27.1.1"
     // SUB-PROJECT DEPENDENCIES END
 }
 

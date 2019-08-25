@@ -36,6 +36,9 @@
     },
     "cordova-plugin-flurryanalytics": {
       "PACKAGE_NAME": "com.synfitness.synrun"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.synfitness.synrun"
     }
   },
   "dependent_plugins": {

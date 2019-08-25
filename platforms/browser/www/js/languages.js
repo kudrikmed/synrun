@@ -18,9 +18,9 @@ var textPgMl = "pg/mL";
 var textKmH = "km/h";
 var textMiH = "mi/h"
 var textm = "mi"
-var textBeginnerMale = "beginner";
-var textIntermediateMale = "intermediate";
-var textProMale = "pro";
+var textBeginnerMale = "awesome";
+var textIntermediateMale = "breathtaking";
+var textProMale = "heart-stopping";
 var textBeginnerFemale = "cutie";
 var textIntermediateFemale = "bombshell";
 var textProFemale = "princess";
@@ -194,6 +194,10 @@ if (language.indexOf("ru") > -1) {
 	$$('#textSubscriptionTitle').text("Подписка");
 	$$('#textSubscription').text("Первая неделя бесплатно");
 	$$('#textBuySubscription').text("Далее");
+	$$('#textFreePopUpSteps').text("Шаги");
+    $$('#textFreePopUpCadence').text("Каденс");
+	$$('#textBeginnerPopUpSteps').text("Шаги");
+    $$('#textBeginnerPopUpCadence').text("Каденс");
  
 
  $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -394,6 +398,10 @@ if (language.indexOf("en") > -1) {
 	$$('#textSubscription').text("First week free");
 	$$('#textWhyNotificationsImportant').text("Notifications will remind you to run, even if you don’t want to.");
 	$$('#textBuySubscription').text("Next");
+	$$('#textFreePopUpSteps').text("Steps");
+    $$('#textFreePopUpCadence').text("Cadence");
+	$$('#textBeginnerPopUpSteps').text("Steps");
+    $$('#textBeginnerPopUpCadence').text("Cadence");
 
     $$('#textLanguageScreenLanguage').text("Language and units");
     $$('#textLanguage').text("Language");
@@ -435,9 +443,9 @@ if (language.indexOf("en") > -1) {
     textAlreadyLogin = "Sorry, accout with this login already exists!";
     textAlreadyEmail = "Sorry, accout with this e-mail already exists!";
     textErrorDuringRegistration = "Error during registration";
-    textBeginnerMale = "beginner";
-    textIntermediateMale = "intermediate";
-    textProMale = "pro";
+	textBeginnerMale = "awesome";
+	textIntermediateMale = "breathtaking";
+	textProMale = "heart-stopping";
     textBeginnerFemale = "cutie";
     textIntermediateFemale = "bombshell";
     textProFemale = "princess";
@@ -599,6 +607,11 @@ function updateLanguage() {
 		$$('#textSubscription').text("Первая неделя бесплатно");
 		$$('#textWhyNotificationsImportant').text("Уведомления напомнят вам о необходимости заниматься бегом, даже если вы этого не хотите.");
 		$$('#textBuySubscription').text("Далее");
+		$$('#textFreePopUpSteps').text("Шаги");
+		$$('#textFreePopUpCadence').text("Каденс");
+		$$('#textBeginnerPopUpSteps').text("Шаги");
+		$$('#textBeginnerPopUpCadence').text("Каденс");
+
 
         $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
         $$('#textLanguage').text("Язык");
@@ -798,6 +811,10 @@ function updateLanguage() {
 		$$('#textSubscription').text("First week free");
 		$$('#textWhyNotificationsImportant').text("Notifications will remind you to run, even if you don’t want to.");
 		$$('#textBuySubscription').text("Next");
+		$$('#textFreePopUpSteps').text("Steps");
+		$$('#textFreePopUpCadence').text("Cadence");
+		$$('#textBeginnerPopUpSteps').text("Steps");
+		$$('#textBeginnerPopUpCadence').text("Cadence");
 
         $$('#textLanguageScreenLanguage').text("Language and units");
         $$('#textLanguage').text("Language");
@@ -839,9 +856,9 @@ function updateLanguage() {
         textAlreadyLogin = "Sorry, accout with this login already exists!";
         textAlreadyEmail = "Sorry, accout with this e-mail already exists!";
         textErrorDuringRegistration = "Error during registration";
-        textBeginnerMale = "beginner";
-        textIntermediateMale = "intermediate";
-        textProMale = "pro";
+		textBeginnerMale = "awesome";
+		textIntermediateMale = "breathtaking";
+		textProMale = "heart-stopping";
         textBeginnerFemale = "cutie";
         textIntermediateFemale = "bombshell";
         textProFemale = "princess";

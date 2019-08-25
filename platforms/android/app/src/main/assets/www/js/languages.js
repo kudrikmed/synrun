@@ -57,6 +57,7 @@ var textNotificationTitle = "It's time to get better";
 var textNotificationText = "Do not forget to run";
 var textRun = "Run";
 var textSubscriptionIsNotValid = "Please subscribe first";
+var textDetails = "more details";
 
 
 var textRatingWouldYouMind = "Would you mind rating SynRun?";
@@ -198,6 +199,12 @@ if (language.indexOf("ru") > -1) {
     $$('#textFreePopUpCadence').text("Каденс");
 	$$('#textBeginnerPopUpSteps').text("Шаги");
     $$('#textBeginnerPopUpCadence').text("Каденс");
+	$$('#trainingHistory').text("История тренировок");
+	$$('#textHistoryTitle').text("История тренировок");
+	$$('#historyDetailsDistance').text("Расстояние");
+    $$('#historyDetailsTime').text("Время");
+	$$('#textHistoryDetailsTitle').text("Подробно");
+	$$('#textChangeBattery').text("Настройки питания");
  
 
  $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -277,6 +284,7 @@ if (language.indexOf("ru") > -1) {
     textNotificationText = "Не забывайте бегать";
 	textRun = "Бежать";
 	textSubscriptionIsNotValid = "Пожалуйста, сначала оформите подписку";
+	textDetails = "подробнее";
 }
 
 if (language.indexOf("en") > -1) {
@@ -402,6 +410,12 @@ if (language.indexOf("en") > -1) {
     $$('#textFreePopUpCadence').text("Cadence");
 	$$('#textBeginnerPopUpSteps').text("Steps");
     $$('#textBeginnerPopUpCadence').text("Cadence");
+	$$('#trainingHistory').text("Training history");
+	$$('#textHistoryTitle').text("Training history");
+	$$('#historyDetailsDistance').text("Distance");
+    $$('#historyDetailsTime').text("Time");
+	$$('#textHistoryDetailsTitle').text("Details");
+	$$('#textChangeBattery').text("Battery settings");
 
     $$('#textLanguageScreenLanguage').text("Language and units");
     $$('#textLanguage').text("Language");
@@ -480,6 +494,7 @@ if (language.indexOf("en") > -1) {
     textNotificationText = "Do not forget to run";
 	textRun = "Run";
 	textSubscriptionIsNotValid = "Please subscribe first";
+	textDetails = "more details";
 
 
 }
@@ -611,6 +626,12 @@ function updateLanguage() {
 		$$('#textFreePopUpCadence').text("Каденс");
 		$$('#textBeginnerPopUpSteps').text("Шаги");
 		$$('#textBeginnerPopUpCadence').text("Каденс");
+		$$('#trainingHistory').text("История тренировок");
+		$$('#textHistoryTitle').text("История тренировок");
+		$$('#textHistoryDetailsTitle').text("Подробно");
+		$$('#historyDetailsDistance').text("Расстояние");
+        $$('#historyDetailsTime').text("Время");
+		$$('#textChangeBattery').text("Настройки питания");
 
 
         $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -690,6 +711,7 @@ function updateLanguage() {
         textNotificationText = "Не забывайте бегать";
 		textRun = "Бежать";
 		textSubscriptionIsNotValid = "Пожалуйста, сначала оформите подписку";
+		textDetails = "подробнее";
     }
 
     if (language.indexOf("en") > -1) {
@@ -815,6 +837,12 @@ function updateLanguage() {
 		$$('#textFreePopUpCadence').text("Cadence");
 		$$('#textBeginnerPopUpSteps').text("Steps");
 		$$('#textBeginnerPopUpCadence').text("Cadence");
+		$$('#trainingHistory').text("Training history");
+		$$('#textHistoryTitle').text("Training history");
+		$$('#historyDetailsDistance').text("Distance");
+        $$('#historyDetailsTime').text("Time");
+		$$('#textHistoryDetailsTitle').text("Details");
+		$$('#textChangeBattery').text("Battery settings");
 
         $$('#textLanguageScreenLanguage').text("Language and units");
         $$('#textLanguage').text("Language");
@@ -893,6 +921,7 @@ function updateLanguage() {
         textNotificationText = "Do not forget to run";
 		textRun = "Run";
 		textSubscriptionIsNotValid = "Please subscribe first";
+		textDetails = "more details";
 		
 
     }

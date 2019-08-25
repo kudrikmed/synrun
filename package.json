@@ -17,6 +17,7 @@
     "cordova-android": "^8.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-apprate": "^1.4.0",
+    "cordova-plugin-background-mode": "git+https://bitbucket.org/TheBosZ/cordova-plugin-run-in-background.git",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-cocoapod-support": "^1.6.2",
     "cordova-plugin-device": "^2.0.3",
@@ -52,7 +53,8 @@
       },
       "cordova-plugin-vibration": {},
       "cordova-plugin-local-notification": {},
-      "cordova-plugin-flurryanalytics": {}
+      "cordova-plugin-flurryanalytics": {},
+      "cordova-plugin-background-mode": {}
     },
     "platforms": [
       "browser",
