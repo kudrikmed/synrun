@@ -205,6 +205,9 @@ if (language.indexOf("ru") > -1) {
     $$('#historyDetailsTime').text("Время");
 	$$('#textHistoryDetailsTitle').text("Подробно");
 	$$('#textChangeBattery').text("Настройки питания");
+	$$('#textFreePopUpTempo').text("Темп");
+    $$('#historyDetailsSpeed').text("Скорость");
+	$$('#historyDetailsTempo').text("Темп");
  
 
  $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -416,6 +419,9 @@ if (language.indexOf("en") > -1) {
     $$('#historyDetailsTime').text("Time");
 	$$('#textHistoryDetailsTitle').text("Details");
 	$$('#textChangeBattery').text("Battery settings");
+	$$('#textFreePopUpTempo').text("Tempo");
+	$$('#historyDetailsSpeed').text("Speed");
+	$$('#historyDetailsTempo').text("Tempo");
 
     $$('#textLanguageScreenLanguage').text("Language and units");
     $$('#textLanguage').text("Language");
@@ -632,6 +638,9 @@ function updateLanguage() {
 		$$('#historyDetailsDistance').text("Расстояние");
         $$('#historyDetailsTime').text("Время");
 		$$('#textChangeBattery').text("Настройки питания");
+		$$('#textFreePopUpTempo').text("Темп");
+		$$('#historyDetailsSpeed').text("Скорость");
+		$$('#historyDetailsTempo').text("Темп");
 
 
         $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -843,6 +852,9 @@ function updateLanguage() {
         $$('#historyDetailsTime').text("Time");
 		$$('#textHistoryDetailsTitle').text("Details");
 		$$('#textChangeBattery').text("Battery settings");
+		$$('#textFreePopUpTempo').text("Tempo");
+		$$('#historyDetailsSpeed').text("Speed");
+		$$('#historyDetailsTempo').text("Tempo");
 
         $$('#textLanguageScreenLanguage').text("Language and units");
         $$('#textLanguage').text("Language");
