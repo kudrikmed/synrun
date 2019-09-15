@@ -59,7 +59,7 @@ function Pedometer() {
 	this.min_acc   = 1./0.;  // minimum of the acceleration on the window L
 	this.max_acc   = -1./0.; // maximum of the acceleration on the window L
 	this.threshold = -1./0.; // threshold to detect a step
-	this.sensibility = 1./30.;  // sensibility to detect a step
+	this.sensibility = 1./10.;  // sensibility to detect a step                        изначально было    1./30. 
 	
 	this.countStep = 0;           // number of steps
 	this.stepArr   = new Array(); // steps in 2 seconds
@@ -201,7 +201,7 @@ function Pedometer() {
 	
 	// compute the threshold
 	this.setThreshold = function(min, max) {
-		this.threshold = (min+max)/2;
+		this.threshold = (min+max)/2;                      // изначально в знаменателе было 2
 	};
 	
 	// detect a step

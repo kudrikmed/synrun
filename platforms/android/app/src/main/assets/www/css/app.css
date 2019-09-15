@@ -43,6 +43,12 @@
     width: 100%;
  
 }
+#historymap {
+   
+    height: 240px;
+    width: 100%;
+ 
+}
 
 .text-size-44 {
     font-size: 44px;
