@@ -16,8 +16,9 @@ var textComplete = "complete";
 var httpLanguage = "eng";
 var textPgMl = "pg/mL";
 var textKmH = "km/h";
-var textMiH = "mi/h"
-var textm = "mi"
+var textMiH = "mi/h";
+var textm = "mi";
+var textkgm2 = "kg/m2";
 var textBeginnerMale = "awesome";
 var textIntermediateMale = "breathtaking";
 var textProMale = "heart-stopping";
@@ -58,7 +59,12 @@ var textNotificationText = "Do not forget to run";
 var textRun = "Run";
 var textSubscriptionIsNotValid = "Please subscribe first";
 var textDetails = "more details";
-
+var textFatMetabolism = "fat metabolism";
+var textGH = "g/hour";
+var textBMI = "Body mass index";
+var textBurnFat = "Burn fat";
+var textParameters = "Parameters";
+var textFatDescription = "<p>Losing weight is a popular reason to start running. But changes in body weight during physical training depend on many factors. First of all, this is fluid loss. We agree that this is not particularly interesting. Why run 11 km to cross out the whole result with one drunk glass of water? But fat is our true enemy. And it’s very interesting how much fat we burned for a single run. This training program will allow you to determine the intensity of fat metabolism using a neural network.</p> <p>Jog at your own pace, at your convenience. The program allows you to calculate the rate of burning fat in your body.</p> <p>Start burning straight now!</p>"
 
 var textRatingWouldYouMind = "Would you mind rating SynRun?";
 var textRatingMessage = "It won’t take more than a minute and helps to promote our app. Thanks for your support!";
@@ -75,6 +81,9 @@ var textAchievementsNotYet = "Not yet";
 var textShareFirstAchievementMale = "I started running with SynRun";
 var textShareFirstAchievementFemale = "I started running with SynRun";
 var textFirstRun = "First run";
+var textBodyFatPercentage = "Body fat percentage"; 
+var textFatBurned = "Fat burned";
+var textBodyMass = "Body mass";
 
 if (language.indexOf("ru") > -1) {
     // русский
@@ -169,6 +178,7 @@ if (language.indexOf("ru") > -1) {
     $$('#congradulationsPopupTime').text("Время");
     $$('#trackerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
     $$('#beginnerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
+	$$('#fatPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
     $$('#textFreeSuccessShare').text("Рассказать");
     $$('#textCongradulationsTitle').text("Поздравления!");
     $$('#textBlockTitleCongradulations').text("Ура!");
@@ -208,7 +218,17 @@ if (language.indexOf("ru") > -1) {
 	$$('#textFreePopUpTempo').text("Темп");
     $$('#historyDetailsSpeed').text("Скорость");
 	$$('#historyDetailsTempo').text("Темп");
- 
+	$$('#textFatPopUpRun').text("Беги!");
+    $$('#textFatPopUpParameters').text("Параметры");
+    $$('#textFatPopUpMetabolism').text("Скорость сжигания жира");
+    $$('#textFatPopUpDistance').text("Расстояние");
+    $$('#textFatPopUpSpeed').text("Скорость");
+    $$('#textFatPopUpTime').text("Время");
+	$$('#textFatPopUpSteps').text("Шаги");
+    $$('#textFatPopUpCadence').text("Каденс");	
+	$$('#textFatPopUpFABStop').text("Стоп");
+	$$('#textFatPopUpNoradrenaline').text("Норадреналин");
+	$$('#changeProgramMenu').text("Настройки");
 
  $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
     $$('#textLanguage').text("Язык");
@@ -224,6 +244,7 @@ if (language.indexOf("ru") > -1) {
     textm = "ми"
     textccal = "кКал";
     textg = "г";
+	textkgm2 = "кг/м2";
     textSelect = "Выбрать";
     textCurrent = "текущий";
     textNotFinished = "не закончен";
@@ -288,6 +309,16 @@ if (language.indexOf("ru") > -1) {
 	textRun = "Бежать";
 	textSubscriptionIsNotValid = "Пожалуйста, сначала оформите подписку";
 	textDetails = "подробнее";
+	textFatMetabolism = "обмен жиров";
+	textGH = "г/час";
+	textBodyFatPercentage = "Процент жира в теле"; 
+	textBMI = "Индекс массы тела";
+	textFatBurned = "Жира сожжено";
+	textBodyMass = "Масса тела";
+	textBurnFat = "Жги жир";
+	textParameters = "Параметры";
+	textFatDescription = "<p>Сбросить вес - это популярный повод, чтобы начать бегать. Но изменения массы тела в ходе физических тренировок зависят от многих факторов. В первую очередь, это потери жидкости. Нам, согласитесь, это не особо интересно. Зачем бежать 11 км, чтобы перечеркнуть весь результат одним выпитым стаканом воды?</p> <p>А вот жир - это да, это наш истинный враг. И очень интересно, сколько именно жира мы сожгли за выполненную пробежку. Данная программа тренировок позволит Вам с помощью нейросети определить интенсивность метаболизма жира. <p>Выполняйте пробежки в удобном для Вас темпе, в удобное время. Программа позволить вычислить скорость сжигания жира в Вашем организме.</p> <p>Начинай жечь прямой сейчас!</p>";
+	
 }
 
 if (language.indexOf("en") > -1) {
@@ -383,6 +414,7 @@ if (language.indexOf("en") > -1) {
     $$('#congradulationsPopupTime').text("Time");
     $$('#trackerPopupDisclaimer').text("For correct work of the app, do not put the device into sleep mode");
     $$('#beginnerPopupDisclaimer').text("For correct work of the app, do not put the device into sleep mode");
+	$$('#fatPopupDisclaimer').text("For correct work of the app, do not put the device into sleep mode");
     $$('#textFreeSuccessShare').text("Share");
     $$('#textCongradulationsTitle').text("Congradulations!");
     $$('#textBlockTitleCongradulations').text("Viva!");
@@ -422,6 +454,17 @@ if (language.indexOf("en") > -1) {
 	$$('#textFreePopUpTempo').text("Tempo");
 	$$('#historyDetailsSpeed').text("Speed");
 	$$('#historyDetailsTempo').text("Tempo");
+	$$('#textFatPopUpRun').text("Run!");
+	$$('#textFatPopUpParameters').text("Parameters");
+	$$('#textFatPopUpMetabolism').text("Fat metabolism speed");
+	$$('#textFatPopUpDistance').text("Distance");
+	$$('#textFatPopUpSpeed').text("Speed");
+	$$('#textFatPopUpTime').text("Time");
+	$$('#textFatPopUpSteps').text("Steps");
+	$$('#textFatPopUpCadence').text("Cadence");
+	$$('#textFatPopUpFABStop').text("Stop");
+	$$('#textFatPopUpNoradrenaline').text("Norepinephrine");
+	$$('#changeProgramMenu').text("Settings");
 
     $$('#textLanguageScreenLanguage').text("Language and units");
     $$('#textLanguage').text("Language");
@@ -437,6 +480,7 @@ if (language.indexOf("en") > -1) {
     textm = "mi"
     textccal = "kcal";
     textg = "g";
+	textkgm2 = "kg/m2";
     textSelect = "Select";
     textCurrent = "current";
     textNotFinished = "not finished";
@@ -501,6 +545,15 @@ if (language.indexOf("en") > -1) {
 	textRun = "Run";
 	textSubscriptionIsNotValid = "Please subscribe first";
 	textDetails = "more details";
+	textFatMetabolism = "fat metabolism";
+	textGH = "g/hour";
+	textBodyFatPercentage = "Body fat percentage"; 
+	textBMI = "Body mass index";
+	textFatBurned = "Fat burned";
+	textBodyMass = "Body mass";
+	textBurnFat = "Burn fat";
+	textParameters = "Parameters";
+	textFatDescription = "<p>Losing weight is a popular reason to start running. But changes in body weight during physical training depend on many factors. First of all, this is fluid loss. We agree that this is not particularly interesting. Why run 11 km to cross out the whole result with one drunk glass of water? But fat is our true enemy. And it’s very interesting how much fat we burned for a single run. This training program will allow you to determine the intensity of fat metabolism using a neural network.</p> <p>Jog at your own pace, at your convenience. The program allows you to calculate the rate of burning fat in your body.</p> <p>Start burning straight now!</p>"
 
 
 }
@@ -602,6 +655,7 @@ function updateLanguage() {
         $$('#congradulationsPopupTime').text("Время");
         $$('#trackerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
         $$('#beginnerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
+		$$('#fatPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
         $$('#textFreeSuccessShare').text("Рассказать");
         $$('#textCongradulationsTitle').text("Поздравления!");
         $$('#textBlockTitleCongradulations').text("Ура!");
@@ -641,6 +695,17 @@ function updateLanguage() {
 		$$('#textFreePopUpTempo').text("Темп");
 		$$('#historyDetailsSpeed').text("Скорость");
 		$$('#historyDetailsTempo').text("Темп");
+		$$('#textFatPopUpRun').text("Беги!");
+		$$('#textFatPopUpParameters').text("Параметры");
+		$$('#textFatPopUpMetabolism').text("Скорость сжигания жира");
+		$$('#textFatPopUpDistance').text("Расстояние");
+		$$('#textFatPopUpSpeed').text("Скорость");
+		$$('#textFatPopUpTime').text("Время");
+		$$('#textFatPopUpSteps').text("Шаги");
+		$$('#textFatPopUpCadence').text("Каденс");
+		$$('#textFatPopUpFABStop').text("Стоп");
+		$$('#textFatPopUpNoradrenaline').text("Норадреналин");
+		$$('#changeProgramMenu').text("Настройки");
 
 
         $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -666,6 +731,7 @@ function updateLanguage() {
         textPgMl = "пг/мл";
         textKmH = "км/ч";
         textMiH = "ми/ч"
+		textkgm2 = "кг/м2";
         textOfTarget = "от цели";
         textEnterUsername = "Пожалуйста, введите имя пользователя!";
         textEnterPassword = "Пожалуйста, введите пароль!";
@@ -721,6 +787,16 @@ function updateLanguage() {
 		textRun = "Бежать";
 		textSubscriptionIsNotValid = "Пожалуйста, сначала оформите подписку";
 		textDetails = "подробнее";
+		textFatMetabolism = "обмен жиров";
+		textGH = "г/час";
+		textBodyFatPercentage = "Процент жира в теле"; 
+		textBMI = "Индекс массы тела";
+		textFatBurned = "Жира сожжено";
+		textBodyMass = "Масса тела";
+		textBurnFat = "Жги жир";
+		textParameters = "Параметры";
+		textFatDescription = "<p>Сбросить вес - это популярный повод, чтобы начать бегать. Но изменения массы тела в ходе физических тренировок зависят от многих факторов. В первую очередь, это потери жидкости. Нам, согласитесь, это не особо интересно. Зачем бежать 11 км, чтобы перечеркнуть весь результат одним выпитым стаканом воды?</p> <p>А вот жир - это да, это наш истинный враг. И очень интересно, сколько именно жира мы сожгли за выполненную пробежку. Данная программа тренировок позволит Вам с помощью нейросети определить интенсивность метаболизма жира. <p>Выполняйте пробежки в удобном для Вас темпе, в удобное время. Программа позволить вычислить скорость сжигания жира в Вашем организме.</p> <p>Начинай жечь прямой сейчас!</p>";
+		
     }
 
     if (language.indexOf("en") > -1) {
@@ -816,6 +892,7 @@ function updateLanguage() {
         $$('#congradulationsPopupTime').text("Time");
         $$('#trackerPopupDisclaimer').text("For correct work of the app, do not put the device into sleep mode");
         $$('#beginnerPopupDisclaimer').text("For correct work of the app, do not put the device into sleep mode");
+		$$('#fatPopupDisclaimer').text("For correct work of the app, do not put the device into sleep mode");
         $$('#textFreeSuccessShare').text("Share");
         $$('#textCongradulationsTitle').text("Congradulations!");
         $$('#textBlockTitleCongradulations').text("Viva!");
@@ -855,6 +932,17 @@ function updateLanguage() {
 		$$('#textFreePopUpTempo').text("Tempo");
 		$$('#historyDetailsSpeed').text("Speed");
 		$$('#historyDetailsTempo').text("Tempo");
+		$$('#textFatPopUpRun').text("Run!");
+		$$('#textFatPopUpParameters').text("Parameters");
+		$$('#textFatPopUpMetabolism').text("Fat metabolism speed");
+		$$('#textFatPopUpDistance').text("Distance");
+		$$('#textFatPopUpSpeed').text("Speed");
+		$$('#textFatPopUpTime').text("Time");
+		$$('#textFatPopUpSteps').text("Steps");
+		$$('#textFatPopUpCadence').text("Cadence");
+		$$('#textFatPopUpFABStop').text("Stop");
+		$$('#textFatPopUpNoradrenaline').text("Norepinephrine");
+		$$('#changeProgramMenu').text("Settings");
 
         $$('#textLanguageScreenLanguage').text("Language and units");
         $$('#textLanguage').text("Language");
@@ -879,6 +967,7 @@ function updateLanguage() {
         textPgMl = "pg/mL";
         textKmH = "km/h";
         textMiH = "mi/h"
+		textkgm2 = "kg/m2";
         textOfTarget = "of target";
         textEnterUsername = "Please, enter username";
         textEnterPassword = "Please, enter password!";
@@ -934,6 +1023,15 @@ function updateLanguage() {
 		textRun = "Run";
 		textSubscriptionIsNotValid = "Please subscribe first";
 		textDetails = "more details";
+		textFatMetabolism = "fat metabolism";
+		textGH = "g/hour";
+		textBodyFatPercentage = "Body fat percentage"; 
+		textBMI = "Body mass index";
+		textFatBurned = "Fat burned";
+		textBodyMass = "Body mass";
+		textBurnFat = "Burn fat";
+		textParameters = "Parameters";
+		textFatDescription = "<p>Losing weight is a popular reason to start running. But changes in body weight during physical training depend on many factors. First of all, this is fluid loss. We agree that this is not particularly interesting. Why run 11 km to cross out the whole result with one drunk glass of water? But fat is our true enemy. And it’s very interesting how much fat we burned for a single run. This training program will allow you to determine the intensity of fat metabolism using a neural network.</p> <p>Jog at your own pace, at your convenience. The program allows you to calculate the rate of burning fat in your body.</p> <p>Start burning straight now!</p>"
 		
 
     }

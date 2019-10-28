@@ -52,16 +52,22 @@
         <!-- Status bar overlay for fullscreen mode-->
         <div class="statusbar"></div>
         <!-- Left panel with cover effect-->
-        <div class="panel panel-left panel-cover theme-dark">
+        <div class="panel panel-left panel-cover">
             <div class="view">
                 <div class="page">
                     <div class="navbar">
                         <div class="navbar-inner">
-                            <div class="title">Left Panel</div>
+                            <div class="title" id="changeProgramMenu">Settings</div>
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block">Left panel content goes here</div>
+                        <div class="block">
+						 <a href="#" id="changeprogramm" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeTheProgramm">Change the programm</div>
+                                </div>
+                            </a>
+						</div>
                     </div>
                 </div>
             </div>
@@ -77,12 +83,15 @@
                     </div>
                     <div class="page-content">
                         <div class="block">
-                            <a href="#" id="changeprogramm" class="item-content item-link">
+                         <!--
+							<a href="#" id="changeprogramm" class="item-content item-link">
                                 <div class="item-inner">
                                     <div class="item-title" id="textChangeTheProgramm">Change the programm</div>
                                 </div>
                             </a>
-                            <br>
+							<br>
+							-->
+                           
                             <a href="#" id="changelanguage" class="item-content item-link">
                                 <div class="item-inner">
                                     <div class="item-title" id="textChangeLanguage">Language and metrics</div>
@@ -159,8 +168,13 @@
 
                 <div class="page" data-name="programmspage">
                     <div class="navbar">
-                        <div class="navbar-inner sliding">
-                         
+                        <div class="navbar-inner sliding">                         						 						 					 						 
+                            <div class="left">
+                                <a href="#" class="link icon-only panel-open" data-panel="left">
+                                    <i class="icon f7-icons ios-only">menu</i>
+                                    <i class="icon material-icons md-only">menu</i>
+                                </a>
+                            </div>                                						 						 											 
                             <div class="title" id="programmtitle">SynRun</div>
                         </div>
                     </div>
@@ -646,6 +660,89 @@
             </div>
         </div>
     </div>
+<!-- Fat program popup -->
+<div class="popup" id="fat-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+
+                            <div class="title" id="textFatPopUpRun">Run!</div>
+
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title" id="textFatPopUpParameters">Parameters</div>
+                        <div class="block block-strong">
+
+                            <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatSpeed">-</h4>
+                                    <p id="textFatPopUpSpeed">Speed</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatTraveledDistance">-</h4>
+
+                                    <p id="textFatPopUpDistance">Distance</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatTime">00:00:00</h4>
+                                    <p id="textFatPopUpTime">Time</p>
+                                </div>
+                            </div>
+							
+							   <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatSteps">-</h4>
+                                    <p id="textFatPopUpSteps">Steps</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatCadence">-</h4>
+                                    <p id="textFatPopUpCadence">Cadence</p>
+                                </div>
+								  <div class="col-33 text-align-center">
+
+                                    <h4 id="fatNoradrenalin">-</h4>
+                                    <p id="textFatPopUpNoradrenaline">Norepinephrine</p>
+                                </div>
+
+                            </div>
+							
+                        </div>
+                        <div class="block-title" id="textFatPopUpMetabolism">Metabolism</div>
+                        <div class="block block-strong">
+                            <div class="col text-align-center">
+                                <div id="fatGauge"
+                                     class="gauge fatgauge"
+                                     data-type="semicircle"
+                                     data-value="0"
+                                     data-value-text="-"
+                                     data-value-text-color="#e91e63"
+                                     data-border-color="#e91e63"
+                                     data-label-text="-"
+                                     data-label-text-color="#333"></div>
+                            </div>
+              
+
+                        </div>
+                        <div class="block block-strong text-align-center">
+                            <div id="fatPopupDisclaimer">For correct work of the app, do not put the device into sleep mode</div>
+                        </div>
+                    </div>
+                    <div id="fatfab" class="fab fab-extended fab-center-bottom">
+                        <a href="#">
+
+                            <div class="fab-text" id="textFatPopUpFABStop">Stop</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     <!-- Congradulations beginner popup -->
