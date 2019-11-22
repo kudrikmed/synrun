@@ -84,6 +84,8 @@ var textFirstRun = "First run";
 var textBodyFatPercentage = "Body fat percentage"; 
 var textFatBurned = "Fat burned";
 var textBodyMass = "Body mass";
+var textRunTillHunderedPercent = "Keep running until dopamine level reach 100%. This will form a running habit";
+var textRunForMaxFat = "Try to run such way, to maximize fat burning speed";
 
 if (language.indexOf("ru") > -1) {
     // русский
@@ -229,6 +231,10 @@ if (language.indexOf("ru") > -1) {
 	$$('#textFatPopUpFABStop').text("Стоп");
 	$$('#textFatPopUpNoradrenaline').text("Норадреналин");
 	$$('#changeProgramMenu').text("Настройки");
+	$$('#textTrackerFABBegiiner').text("Формировать привычку");
+	$$('#textTrackerFABFat').text("Сжигать жир");
+	$$('#fabgobeginner').text("Формировать привычку");
+	$$('#fabgofat').text("Сжигать жир");
 
  $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
     $$('#textLanguage').text("Язык");
@@ -318,7 +324,8 @@ if (language.indexOf("ru") > -1) {
 	textBurnFat = "Жги жир";
 	textParameters = "Параметры";
 	textFatDescription = "<p>Сбросить вес - это популярный повод, чтобы начать бегать. Но изменения массы тела в ходе физических тренировок зависят от многих факторов. В первую очередь, это потери жидкости. Нам, согласитесь, это не особо интересно. Зачем бежать 11 км, чтобы перечеркнуть весь результат одним выпитым стаканом воды?</p> <p>А вот жир - это да, это наш истинный враг. И очень интересно, сколько именно жира мы сожгли за выполненную пробежку. Данная программа тренировок позволит Вам с помощью нейросети определить интенсивность метаболизма жира. <p>Выполняйте пробежки в удобном для Вас темпе, в удобное время. Программа позволить вычислить скорость сжигания жира в Вашем организме.</p> <p>Начинай жечь прямой сейчас!</p>";
-	
+	textRunTillHunderedPercent = "Продолжай бежать, пока уровень дофамина не достигнет 100%. Это сформирует привычку к бегу";
+	textRunForMaxFat = "Старайся бежать так, чтобы скорость сжигания жира была максимальной";
 }
 
 if (language.indexOf("en") > -1) {
@@ -465,6 +472,11 @@ if (language.indexOf("en") > -1) {
 	$$('#textFatPopUpFABStop').text("Stop");
 	$$('#textFatPopUpNoradrenaline').text("Norepinephrine");
 	$$('#changeProgramMenu').text("Settings");
+	$$('#textTrackerFABBegiiner').text("Form habit");
+	$$('#textTrackerFABFat').text("Burn fat");
+	$$('#fabgobeginner').text("Form habit");
+	$$('#fabgofat').text("Burn fat");
+	
 
     $$('#textLanguageScreenLanguage').text("Language and units");
     $$('#textLanguage').text("Language");
@@ -554,7 +566,8 @@ if (language.indexOf("en") > -1) {
 	textBurnFat = "Burn fat";
 	textParameters = "Parameters";
 	textFatDescription = "<p>Losing weight is a popular reason to start running. But changes in body weight during physical training depend on many factors. First of all, this is fluid loss. We agree that this is not particularly interesting. Why run 11 km to cross out the whole result with one drunk glass of water? But fat is our true enemy. And it’s very interesting how much fat we burned for a single run. This training program will allow you to determine the intensity of fat metabolism using a neural network.</p> <p>Jog at your own pace, at your convenience. The program allows you to calculate the rate of burning fat in your body.</p> <p>Start burning straight now!</p>"
-
+	textRunTillHunderedPercent = "Keep running until dopamine level reach 100%. This will form a running habit";
+	textRunForMaxFat = "Try to run such way, to maximize fat burning speed";
 
 }
 
@@ -706,7 +719,10 @@ function updateLanguage() {
 		$$('#textFatPopUpFABStop').text("Стоп");
 		$$('#textFatPopUpNoradrenaline').text("Норадреналин");
 		$$('#changeProgramMenu').text("Настройки");
-
+		$$('#textTrackerFABBegiiner').text("Формировать привычку");
+		$$('#textTrackerFABFat').text("Сжигать жир");
+		$$('#fabgobeginner').text("Формировать привычку");
+		$$('#fabgofat').text("Сжигать жир");
 
         $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
         $$('#textLanguage').text("Язык");
@@ -796,7 +812,8 @@ function updateLanguage() {
 		textBurnFat = "Жги жир";
 		textParameters = "Параметры";
 		textFatDescription = "<p>Сбросить вес - это популярный повод, чтобы начать бегать. Но изменения массы тела в ходе физических тренировок зависят от многих факторов. В первую очередь, это потери жидкости. Нам, согласитесь, это не особо интересно. Зачем бежать 11 км, чтобы перечеркнуть весь результат одним выпитым стаканом воды?</p> <p>А вот жир - это да, это наш истинный враг. И очень интересно, сколько именно жира мы сожгли за выполненную пробежку. Данная программа тренировок позволит Вам с помощью нейросети определить интенсивность метаболизма жира. <p>Выполняйте пробежки в удобном для Вас темпе, в удобное время. Программа позволить вычислить скорость сжигания жира в Вашем организме.</p> <p>Начинай жечь прямой сейчас!</p>";
-		
+		textRunTillHunderedPercent = "Продолжай бежать, пока уровень дофамина не достигнет 100%. Это сформирует привычку к бегу";
+		textRunForMaxFat = "Старайся бежать так, чтобы скорость сжигания жира была максимальной";
     }
 
     if (language.indexOf("en") > -1) {
@@ -943,6 +960,10 @@ function updateLanguage() {
 		$$('#textFatPopUpFABStop').text("Stop");
 		$$('#textFatPopUpNoradrenaline').text("Norepinephrine");
 		$$('#changeProgramMenu').text("Settings");
+		$$('#textTrackerFABBegiiner').text("Form habit");
+		$$('#textTrackerFABFat').text("Burn fat");
+		$$('#fabgobeginner').text("Form habit");
+		$$('#fabgofat').text("Burn fat");
 
         $$('#textLanguageScreenLanguage').text("Language and units");
         $$('#textLanguage').text("Language");
@@ -1032,8 +1053,8 @@ function updateLanguage() {
 		textBurnFat = "Burn fat";
 		textParameters = "Parameters";
 		textFatDescription = "<p>Losing weight is a popular reason to start running. But changes in body weight during physical training depend on many factors. First of all, this is fluid loss. We agree that this is not particularly interesting. Why run 11 km to cross out the whole result with one drunk glass of water? But fat is our true enemy. And it’s very interesting how much fat we burned for a single run. This training program will allow you to determine the intensity of fat metabolism using a neural network.</p> <p>Jog at your own pace, at your convenience. The program allows you to calculate the rate of burning fat in your body.</p> <p>Start burning straight now!</p>"
-		
-
+		textRunTillHunderedPercent = "Keep running until dopamine level reach 100%. This will form a running habit";
+		textRunForMaxFat = "Try to run such way, to maximize fat burning speed";
     }
 
     else {
