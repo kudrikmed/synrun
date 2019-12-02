@@ -14,14 +14,16 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova": "^9.0.0",
-    "cordova-android": "^8.0.0",
+    "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
+    "cordova-plugin-admobpro": "^2.49.0",
     "cordova-plugin-apprate": "^1.4.0",
     "cordova-plugin-background-mode": "git+https://bitbucket.org/TheBosZ/cordova-plugin-run-in-background.git",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-cocoapod-support": "^1.6.2",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-extension": "^1.5.4",
     "cordova-plugin-flurryanalytics": "^1.4.6",
     "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-globalization": "^1.11.0",
@@ -54,7 +56,11 @@
       "cordova-plugin-vibration": {},
       "cordova-plugin-local-notification": {},
       "cordova-plugin-flurryanalytics": {},
-      "cordova-plugin-background-mode": {}
+      "cordova-plugin-background-mode": {},
+      "cordova-plugin-admobpro": {
+        "ADMOB_APP_ID": "ca-app-pub-5186877757924020~3335013077",
+        "PLAY_SERVICES_VERSION": "16.0.0"
+      }
     },
     "platforms": [
       "browser",

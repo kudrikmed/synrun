@@ -228,6 +228,14 @@ module.exports = [
         "id": "cordova-plugin-background-mode.BackgroundMode.Proxy",
         "pluginId": "cordova-plugin-background-mode",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+        "id": "cordova-plugin-admobpro.AdMob",
+        "pluginId": "cordova-plugin-admobpro",
+        "clobbers": [
+            "window.AdMob"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -251,7 +259,9 @@ module.exports.metadata =
     "cordova-plugin-local-notification": "0.9.0-beta.2",
     "cordova-plugin-cocoapod-support": "1.6.2",
     "cordova-plugin-flurryanalytics": "1.4.6",
-    "cordova-plugin-background-mode": "0.7.2"
+    "cordova-plugin-background-mode": "0.7.2",
+    "cordova-plugin-extension": "1.5.4",
+    "cordova-plugin-admobpro": "2.49.0"
 }
 // BOTTOM OF METADATA
 });

@@ -52,16 +52,22 @@
         <!-- Status bar overlay for fullscreen mode-->
         <div class="statusbar"></div>
         <!-- Left panel with cover effect-->
-        <div class="panel panel-left panel-cover theme-dark">
+        <div class="panel panel-left panel-cover">
             <div class="view">
                 <div class="page">
                     <div class="navbar">
                         <div class="navbar-inner">
-                            <div class="title">Left Panel</div>
+                            <div class="title" id="changeProgramMenu">Settings</div>
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block">Left panel content goes here</div>
+                        <div class="block">
+						 <a href="#" id="changeprogramm" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeTheProgramm">Change the programm</div>
+                                </div>
+                            </a>
+						</div>
                     </div>
                 </div>
             </div>
@@ -77,15 +83,24 @@
                     </div>
                     <div class="page-content">
                         <div class="block">
-                            <a href="#" id="changeprogramm" class="item-content item-link">
+                         <!--
+							<a href="#" id="changeprogramm" class="item-content item-link">
                                 <div class="item-inner">
                                     <div class="item-title" id="textChangeTheProgramm">Change the programm</div>
                                 </div>
                             </a>
-                            <br>
+							<br>
+							-->
+                           
                             <a href="#" id="changelanguage" class="item-content item-link">
                                 <div class="item-inner">
                                     <div class="item-title" id="textChangeLanguage">Language and metrics</div>
+                                </div>
+                            </a>
+                            <br>
+							 <a href="#" id="batterysettings" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeBattery">Battery settings</div>
                                 </div>
                             </a>
                             <br>
@@ -153,8 +168,13 @@
 
                 <div class="page" data-name="programmspage">
                     <div class="navbar">
-                        <div class="navbar-inner sliding">
-                         
+                        <div class="navbar-inner sliding">                         						 						 					 						 
+                            <div class="left">
+                                <a href="#" class="link icon-only panel-open" data-panel="left">
+                                    <i class="icon f7-icons ios-only">menu</i>
+                                    <i class="icon material-icons md-only">menu</i>
+                                </a>
+                            </div>                                						 						 											 
                             <div class="title" id="programmtitle">SynRun</div>
                         </div>
                     </div>
@@ -210,6 +230,16 @@
 
                             </div>
                         </div>
+						
+						<div class="card">
+						<div class="card-content">
+						<div class="list links-list">
+						<ul>
+							<li><a href="#" id="trainingHistory">Training history</a></li>
+							</ul>
+							</div>
+							</div>
+							</div>
 
                         <div class="card">
                             <div class="card-header" id="textTotal"></div>
@@ -335,12 +365,48 @@
                         <div id="map">
                         </div>
 
+						<div id="fabgo" class="fab fab-extended fab-center-bottom">
+                            <a href="#">
+
+                                <div class="fab-text" id="textTrackerFABStart">Start</div>
+                            </a>
+							<div class="fab-buttons fab-buttons-top" style="text-align:center">
+							<a href="#" class="fab-label-button">
+					
+							
+							<p id="fabgobeginner">Burn fat</p>
+							
+							</a>
+							<a href="#" class="fab-label-button">
+							<p id="fabgofat" >Form habbit</p>
+						
+							</a>
+							</div>
+                        </div>
+				<!--
                         <div id="fabstart" class="fab fab-extended fab-center-bottom">
                             <a href="#">
 
                                 <div class="fab-text" id="textTrackerFABStart">Start</div>
                             </a>
                         </div>
+					-->	
+						
+						<!--
+						 <div id="fabgobeginner" class="fab fab-extended fab-left-bottom">
+                            <a href="#">
+
+                                <div class="fab-text" id="textTrackerFABBegiiner">Form habit</div>
+                            </a>
+                        </div>
+						
+						 <div id="fabgofat" class="fab fab-extended fab-right-bottom">
+                            <a href="#">
+
+                                <div class="fab-text" id="textTrackerFABFat">Burn fat</div>
+                            </a>
+                        </div>
+						-->
                         <div id="fabgps" class="fab fab-right-top">
                             <a href="#">
                                 <i class="icon f7-icons">navigation</i>
@@ -484,15 +550,20 @@
                             </div>
 							
 							   <div class="row">
-                                <div class="col-50 text-align-center">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="steps">-</h4>
                                     <p id="textFreePopUpSteps">Steps</p>
                                 </div>
-                                <div class="col-50 text-align-center">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="cadence">-</h4>
                                     <p id="textFreePopUpCadence">Cadence</p>
+                                </div>
+								  <div class="col-33 text-align-center">
+
+                                    <h4 id="tempo">-</h4>
+                                    <p id="textFreePopUpTempo">Tempo</p>
                                 </div>
 
                             </div>
@@ -625,6 +696,89 @@
             </div>
         </div>
     </div>
+<!-- Fat program popup -->
+<div class="popup" id="fat-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+
+                            <div class="title" id="textFatPopUpRun">Run!</div>
+
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title" id="textFatPopUpParameters">Parameters</div>
+                        <div class="block block-strong">
+
+                            <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatSpeed">-</h4>
+                                    <p id="textFatPopUpSpeed">Speed</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatTraveledDistance">-</h4>
+
+                                    <p id="textFatPopUpDistance">Distance</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatTime">00:00:00</h4>
+                                    <p id="textFatPopUpTime">Time</p>
+                                </div>
+                            </div>
+							
+							   <div class="row">
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatSteps">-</h4>
+                                    <p id="textFatPopUpSteps">Steps</p>
+                                </div>
+                                <div class="col-33 text-align-center">
+
+                                    <h4 id="fatCadence">-</h4>
+                                    <p id="textFatPopUpCadence">Cadence</p>
+                                </div>
+								  <div class="col-33 text-align-center">
+
+                                    <h4 id="fatNoradrenalin">-</h4>
+                                    <p id="textFatPopUpNoradrenaline">Norepinephrine</p>
+                                </div>
+
+                            </div>
+							
+                        </div>
+                        <div class="block-title" id="textFatPopUpMetabolism">Metabolism</div>
+                        <div class="block block-strong">
+                            <div class="col text-align-center">
+                                <div id="fatGauge"
+                                     class="gauge fatgauge"
+                                     data-type="semicircle"
+                                     data-value="0"
+                                     data-value-text="-"
+                                     data-value-text-color="#e91e63"
+                                     data-border-color="#e91e63"
+                                     data-label-text="-"
+                                     data-label-text-color="#333"></div>
+                            </div>
+              
+
+                        </div>
+                        <div class="block block-strong text-align-center">
+                            <div id="fatPopupDisclaimer">For correct work of the app, do not put the device into sleep mode</div>
+                        </div>
+                    </div>
+                    <div id="fatfab" class="fab fab-extended fab-center-bottom">
+                        <a href="#">
+
+                            <div class="fab-text" id="textFatPopUpFABStop">Stop</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     <!-- Congradulations beginner popup -->
@@ -727,6 +881,69 @@
                         </div>
                     </div>
                 </div>
+        </div>
+    </div>
+	
+	<!-- History popup -->
+    <div class="popup" id="history-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"id="historyPopupBackButton">
+						<i class="icon icon-back"></i>
+						</div>
+                        <div class="title" id="textHistoryTitle">History</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+               
+			   <div id="historyTestDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- History details popup -->
+    <div class="popup" id="history-details-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"id="historyDetailsPopupBackButton">
+						<i class="icon icon-back"></i>
+						</div>
+                        <div class="title" id="textHistoryDetailsTitle">Details</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+               
+			     <div class="block block-strong">
+
+                        <div class="row">
+                            <div class="col-25 text-align-center" id="historyDetailsDistance">Distance</div>
+                            <div class="col-25 text-align-center" id="historyDetailsDistanceValue"></div>
+							
+							<div class="col-25 text-align-center" id="historyDetailsTempo">Tempo</div>
+                            <div class="col-25 text-align-center" id="historyDetailsTempoValue"></div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-25 text-align-center" id="historyDetailsTime">Time</div>
+                            <div class="col-25 text-align-center" id="historyDetailsTimeValue"></div>
+							
+							<div class="col-25 text-align-center" id="historyDetailsSpeed">Speed</div>
+                            <div class="col-25 text-align-center" id="historyDetailsSpeedValue"></div>
+                        </div>
+						
+
+                    </div>
+					<div id="historymap"></div>
+            </div>
         </div>
     </div>
 

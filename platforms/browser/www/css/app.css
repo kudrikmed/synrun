@@ -43,11 +43,32 @@
     width: 100%;
  
 }
+#historymap {
+   
+    height: 240px;
+    width: 100%;
+ 
+}
 
 .text-size-44 {
     font-size: 44px;
 }
 
+.text-size-30 {
+    font-size: 30px;
+}
+
 .text-size-80 {
     font-size: 80px;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
